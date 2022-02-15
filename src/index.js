@@ -2,7 +2,7 @@ const express = require("express")
 const morgan = require("morgan")
 const cors = require("cors")
 
-const config = require ('./config/configVar')
+const config = require ('./config/index')
 
 const BDConnection = require("./database/DBConnection")
 const producRoutes = require("./routes/product.routes")
@@ -34,7 +34,7 @@ async function startExpressServer(params) {
     // });
 
     app.listen(config.port, ()=>{
-        console.log(`Server work in http://localhost:${PORT}`)
+        console.log(`Server work in http://localhost:${config.port}`)
     });
 }
 startExpressServer();
